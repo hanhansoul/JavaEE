@@ -2,6 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="CRUD.UserMapper">
+    <!--简单单表查询-->
     <select id="selectUserById" parameterType="int" resultType="po.User">
         SELECT * FROM user WHERE id = #{id}
     </select>
@@ -18,4 +19,5 @@
         UPDATE user SET username = #{username}, sex = #{sex}, address = #{address}
         WHERE id = #{id}
     </update>
+
 </mapper>

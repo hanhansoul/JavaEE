@@ -39,5 +39,9 @@
         <!--<mapper class="OneToOneMapper.PersonMapper"/>-->
         <!--<mapper resource="OneToOneMapper/PersonMapperInterface.xml"/>-->
         <mapper resource="CRUD/UserMapper.xml"/>
+        <mapper resource="oneToOneMapper/UserMapper.xml"/>
+        <mapper resource="oneToOneMapper/CarMapper.xml"/>
+        <mapper resource="oneToManyMapper/UserMapper.xml"/>
+        <mapper resource="oneToManyMapper/LessonMapper.xml"/>
     </mappers>
 </configuration>

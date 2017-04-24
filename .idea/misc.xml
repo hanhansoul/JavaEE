@@ -4,12 +4,16 @@
     <entry_points version="2.0" />
   </component>
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/HibernateProject" />
     <file type="web" url="file://$PROJECT_DIR$/MyBatisProject" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringMVCProject" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/MyBatisProject/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringMVC/pom.xml" />
+        <option value="$PROJECT_DIR$/HibernateProject/pom.xml" />
       </list>
     </option>
   </component>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="oneToManyMapper.LessonMapper">
+    <select id="selectLessonById" parameterType="int" resultType="po.Lesson">
+        SELECT * FROM lesson where id = #{id}
+    </select>
+    <select id="selectLessonByUserId" parameterType="int" resultType="po.Lesson">
+        SELECT * FROM lesson where userId = #{id}
+    </select>
+    <select id="selectLessonsMoreThanScore" parameterType="int" resultType="po.Lesson">
+        SELECT * FROM lesson WHERE score > #{score}
+    </select>
+    <select id="selectLessonsLessThanScore" parameterType="int" resultType="po.Lesson">
+        SELECT * FROM lesson WHERE score > #{score}
+    </select>
+    <select id="selectLessonsEqualToScore" parameterType="int" resultType="po.Lesson">
+        SELECT * FROM lesson WHERE score = #{score}
+    </select>
+
+    <select id="selectLessonsWithUserIdAndScore" parameterType="map" resultType="po.Lesson">
+        SELECT * FROM lesson WHERE id=#{userId} and score > #{score}
+    </select>
+
+</mapper>

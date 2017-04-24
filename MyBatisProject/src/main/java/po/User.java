@@ -10,7 +10,25 @@ public class User {
     private String username;
     private String sex;
     private String address;
+    private Car car;
     private List<Clazz> clazzes;
+    private List<Lesson> lessons;
+
+    public Car getCar() {
+        return car;
+    }
+
+    public void setCar(Car car) {
+        this.car = car;
+    }
+
+    public List<Lesson> getLessons() {
+        return lessons;
+    }
+
+    public void setLessons(List<Lesson> lessons) {
+        this.lessons = lessons;
+    }
 
     public User() {
     }
