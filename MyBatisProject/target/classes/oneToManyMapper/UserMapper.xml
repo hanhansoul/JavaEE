@@ -2,39 +2,55 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="oneToManyMapper.UserMapper">
-    <!--&lt;!&ndash;简单单表查询&ndash;&gt;-->
-    <!--<select id="selectUserById" parameterType="int" resultType="po.User">-->
-    <!--SELECT * FROM user WHERE id = #{id}-->
-    <!--</select>-->
-
-    <!--<select id="selectUserByName" parameterType="string" resultType="po.User">-->
-    <!--SELECT * FROM user WHERE username like "%${value}%"-->
-    <!--</select>-->
-
-    <!--<insert id="insertUser" parameterType="po.User" useGeneratedKeys="true">-->
-    <!--INSERT INTO user (username, sex, address) VALUES (#{username}, #{sex}, #{address})-->
-    <!--</insert>-->
-
-    <!--<update id="updateUserById" parameterType="po.User">-->
-    <!--UPDATE user SET username = #{username}, sex = #{sex}, address = #{address}-->
-    <!--WHERE id = #{id}-->
-    <!--</update>-->
 
     <!-- 复杂查询 -->
-    <select id="selectUserWithCarById" parameterType="int" resultMap="userAndCarMapper">
+    <select id="selectUserWithCardById" parameterType="int" resultMap="userAndOrderMapper">
         SELECT * FROM user WHERE id = #{id}
     </select>
-    <resultMap id="userAndCarMapper" type="po.User">
+
+    <!-- 一对多关系 collection -->
+    <resultMap id="userAndOrderMapper" type="po.User">
         <id property="id" column="id"/>
         <result property="username" column="username"/>
         <result property="sex" column="sex"/>
         <result property="address" column="address"/>
-        <collection property="lessons" column="id" javaType="ArrayList"
-                    ofType="po.Lesson" fetchType="lazy"
-                    select="oneToManyMapper.LessonMapper.selectLessonByUserId">
+        <collection property="cards" column="id" javaType="ArrayList"
+                    ofType="po.Card" fetchType="lazy"
+                    select="oneToManyMapper.CardMapper.selectCardByUserId">
             <id property="id" column="id"/>
             <result property="code" column="code"/>
             <result property="score" column="score"/>
         </collection>
     </resultMap>
+
+
+    <!-- 采用map作为sql语句的输入和输出参数 -->
+    <!-- 也可以将多个bean合并作为一个bean作为输入和输出，但这样需要构建额外的类。 -->
+    <select id="selectUserOnScore" parameterType="map" resultType="map">
+        SELECT ut.id, ut.username, ut.sex, ut.address, ct.code, ct.score
+        FROM user ut LEFT JOIN card ct ON ut.id = ct.userId WHERE ut.id = #{id} and ct.score > #{score}
+    </select>
+
+    <!--有问题-->
+    <!--<select id="selectUserOnScoreToResultMap" parameterType="map" resultMap="userAndOrderMapper">-->
+        <!--SELECT * FROM user ut, card ct WHERE ut.id = ct.userId AND ut.id = #{id} AND ct.score > #{score}-->
+    <!--</select>-->
+
+
+    <!--<select id="selectUserWithLessonById" parameterType="map" resultMap="userAndCarMapper">-->
+    <!--SELECT * FROM user WHERE id = #{id}-->
+    <!--</select>-->
+    <!--<resultMap id="userAndCarMapper" type="po.User">-->
+    <!--<id property="id" column="id"/>-->
+    <!--<result property="username" column="username"/>-->
+    <!--<result property="sex" column="sex"/>-->
+    <!--<result property="address" column="address"/>-->
+    <!--<collection property="cards" column="{userId=id,}" javaType="ArrayList"-->
+    <!--ofType="po.CardfetchType="lazy"-->
+    <!--select="oneToManyMapper.OrderMapperselectLessonByUserId">-->
+    <!--<id property="id" column="id"/>-->
+    <!--<result property="code" column="code"/>-->
+    <!--<result property="score" column="score"/>-->
+    <!--</collection>-->
+    <!--</resultMap>-->
 </mapper>

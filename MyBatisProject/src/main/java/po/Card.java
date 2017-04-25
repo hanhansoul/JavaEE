@@ -3,7 +3,7 @@ package po;
 /**
  * Created by Administrator on 2017/4/24.
  */
-public class Lesson {
+public class Card {
     private Integer id;
     private String code;
     private Integer score;
@@ -43,7 +43,7 @@ public class Lesson {
 
     @Override
     public String toString() {
-        return "Lesson{" +
+        return "Card{" +
                 "id=" + id +
                 ", code='" + code + '\'' +
                 ", score=" + score +

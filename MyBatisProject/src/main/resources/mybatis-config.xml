@@ -42,6 +42,6 @@
         <mapper resource="oneToOneMapper/UserMapper.xml"/>
         <mapper resource="oneToOneMapper/CarMapper.xml"/>
         <mapper resource="oneToManyMapper/UserMapper.xml"/>
-        <mapper resource="oneToManyMapper/LessonMapper.xml"/>
+        <mapper resource="oneToManyMapper/CardMapper.xml"/>
     </mappers>
 </configuration>

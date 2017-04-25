@@ -12,7 +12,7 @@ public class User {
     private String address;
     private Car car;
     private List<Clazz> clazzes;
-    private List<Lesson> lessons;
+    private List<Card> cards;
 
     public Car getCar() {
         return car;
@@ -22,12 +22,12 @@ public class User {
         this.car = car;
     }
 
-    public List<Lesson> getLessons() {
-        return lessons;
+    public List<Card> getCards() {
+        return cards;
     }
 
-    public void setLessons(List<Lesson> lessons) {
-        this.lessons = lessons;
+    public void setCards(List<Card> cards) {
+        this.cards = cards;
     }
 
     public User() {
