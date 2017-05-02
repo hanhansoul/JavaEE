@@ -3,6 +3,10 @@ package po;
 /**
  * Created by Administrator on 2017/4/24.
  */
+/*
+ * User -> Card
+ * Many -> Many
+ */
 public class Card {
     private Integer id;
     private String code;

@@ -24,7 +24,6 @@
         <processorPath useClasspath="true" />
         <module name="HibernateProject" />
         <module name="MyBatisProject" />
-        <module name="SpringMVC" />
         <module name="SpringMVCProject" />
       </profile>
     </annotationProcessing>

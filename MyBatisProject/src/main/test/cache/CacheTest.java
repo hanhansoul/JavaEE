@@ -43,6 +43,12 @@ public class CacheTest {
         System.out.println(user2);
     }
 
+    @Test
+    public void cache2Test() {
+
+
+    }
+
     @After
     public void destroy() {
         session.commit();

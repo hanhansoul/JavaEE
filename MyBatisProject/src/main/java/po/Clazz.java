@@ -5,6 +5,10 @@ import java.util.List;
 /**
  * Created by Administrator on 2017/4/22.
  */
+/*
+ * User -> Clazz
+ * Many -> One
+ */
 public class Clazz {
     private Integer id;
     private String name;
