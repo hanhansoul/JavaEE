@@ -9,11 +9,36 @@
 <html>
 <head>
     <title></title>
+    <script type="text/javascript">
+        $(function () {
+            $("#testJson").click(function () {
+                var url = this.href;
+                var args = {};
+                $.post(url, args, function (data) {
+                    for (var i = 0; i < data.length; i++) {
+                        var id = data[i].id;
+                        var name = data[i].name;
+                        alert(id + ": " + name);
+                    }
+                });
+                return false;
+            })
+        })
+    </script>
 </head>
 <body>
 
 <a href="emps">List All Users</a>
 <br/><br/>
 
+<a href="testJson">Test Json</a>
+<br><br>
+
+<form action="testFileUpload" method="post" enctype="multipart/form-data">
+    File:<input type="file" name="file"/>
+    Desc:<input type="text" name="desc"/>
+    <input type="submit" value="submit"/>
+</form>
+<br/><br/>
 </body>
 </html>

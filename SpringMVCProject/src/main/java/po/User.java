@@ -1,5 +1,6 @@
 package po;
 
+import com.sun.istack.internal.NotNull;
 import org.springframework.stereotype.Component;
 
 /**
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class User {
+
     private Integer id;
     private String name;
     private Integer age;

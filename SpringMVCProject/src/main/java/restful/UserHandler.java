@@ -4,11 +4,11 @@ import dao.DepartmentDao;
 import dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import po.User;
 
+import java.util.Collection;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -50,9 +50,55 @@ public class UserHandler {
     }
 
     // @PathVariable
-    @RequestMapping(value = "/emp", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/emp/{id}", method = RequestMethod.DELETE)
     public String delete(@PathVariable("id") Integer id) {
         userDao.deleteUser(id);
         return "redirect:/emps";
+    }
+
+//    @RequestMapping(value = "/test", method = RequestMethod.DELETE)
+//    public String test() {
+//        // userDao.deleteUser(id);
+//        System.out.println("success");
+//        return "redirect:/success";
+//    }
+
+    @RequestMapping(value = "/emp/{id}", method = RequestMethod.GET)
+    public String delete(@PathVariable("id") Integer id, Map<String, Object> map) {
+        map.put("user", userDao.getUser(id));
+        map.put("departments", departmentDao.getDepartments());
+        return "input";
+    }
+
+    //    @ModelAttribute
+    @ModelAttribute
+    public void getUser(@RequestParam(value = "id", required = false) Integer id,
+                        Map<String, Object> map) {
+        if (id != null) {
+            map.put("user", userDao.getUser(id));
+        }
+    }
+
+    @RequestMapping(value = "/emp", method = RequestMethod.PUT)
+    public String update(User user) {
+        userDao.save(user);
+        return "redirect:/emps";
+    }
+
+
+    @ResponseBody
+    @RequestMapping("/testJson")
+    public Collection<User> testJson() {
+        return userDao.getAll();
+    }
+
+    //    @ResponseBody由函数返回的类型作为选择HttpMessageConverter类型的标准
+    //    @RequestBody由函数参数的类型作为选择HttpMessageConverter类型的标准
+    //    HttpEntity<T>和ResponseEntity<T>同理类似 ？？
+    @ResponseBody
+    @RequestMapping("/testHttpMessageConverter")
+    public String testHttpMessageConverter(@RequestBody String body) {
+        System.out.println(body);
+        return "" + new Date();
     }
 }
