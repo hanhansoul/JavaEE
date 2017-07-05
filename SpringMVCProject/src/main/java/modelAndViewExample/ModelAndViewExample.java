@@ -62,6 +62,7 @@ public class ModelAndViewExample {
         return SUCCESS;
     }
 
+    /* @ModelAttribute */
     /**
      * @ModelAttribute 用于在表单提交并映射到POJO对象时，只对特定某些域进行更新，其他域保持不变。
      * 1. 采用hidden类型的input元素提供不需要更新的域。
@@ -84,6 +85,8 @@ public class ModelAndViewExample {
      *
      * 注意：@ModelAttribute 修饰的方法中，放入Map中的属性名应与目标方法入参类型的第一个字母小写的字符串一致。
      * @ModelAttribute 修饰的方法的方法名没有影响。
+     *
+     * // TO-DO 原理解析
      * @param id
      * @param map
      */

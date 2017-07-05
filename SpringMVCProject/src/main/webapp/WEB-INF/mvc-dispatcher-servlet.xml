@@ -19,10 +19,22 @@
     <context:component-scan base-package="modelAndViewExample"/>
 
 
+    <!--配置视图解析器 将handler方法返回值解析为实际的物理视图-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/views/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
+
+    <!--配置国际化资源文件-->
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename" value="i18n"></property>
+    </bean>
+
+    <!--view-controller-->
+    <mvc:view-controller path="/success" view-name="success"/>
+
+    <!--<mvc:annotation-driven/>-->
+    <mvc:annotation-driven></mvc:annotation-driven>
 
     <!--<bean class="org.springframework.web.servlet.view.BeanNameViewResolver">-->
         <!--<property name="order" value="100"></property>-->
@@ -47,7 +59,7 @@
     <!--<mvc:default-servlet-handler/>-->
 
     <!---->
-    <!--<mvc:annotation-driven/>-->
+
 
 
 </beans>
