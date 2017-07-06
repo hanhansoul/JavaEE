@@ -94,4 +94,9 @@
 <a href="/springmvc/testViewAndViewResolver">Test viewAndViewResolver</a>
 <br><br>
 
+<a href="/springmvc/testCustomedView">Test customedView</a>
+<br><br>
+
+<a href="/springmvc/testRedirect">Test Redirect</a>
+<br><br>
 </html>

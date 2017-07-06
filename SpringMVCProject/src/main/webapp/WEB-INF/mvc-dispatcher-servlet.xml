@@ -8,8 +8,7 @@
 
     <!--<context:component-scan base-package="helloworld"/>-->
     <!--<context:component-scan base-package="requestMappingTest"/>-->
-    <context:component-scan base-package="modelTest"/>
-    <context:component-scan base-package="views"/>
+    <context:component-scan base-package="helloWorldTest"/>
     <context:component-scan base-package="po"/>
     <context:component-scan base-package="dao"/>
     <context:component-scan base-package="restful"/>
@@ -30,15 +29,32 @@
         <property name="basename" value="i18n"></property>
     </bean>
 
+    <!--配置直接转发页面-->
     <!--view-controller-->
     <mvc:view-controller path="/success" view-name="success"/>
+    <!--<mvc:view-controller path="/list" view-name="list" />-->
 
     <!--<mvc:annotation-driven/>-->
+    <!--
+    <mvc:annotation-driven/>会自动注册
+    RequestMappingHandlerMapping
+    RequestMappingHandlerAdapter
+    ExceptionHandlerExceptionResolver三个bean
+
+    支持使用ConversionService实力对表单参数进行类型转换
+    支持@NumberFormatannotation，@DateTimeFormat注解
+    支持@Valid注解对JavaBean实例进行JSR303验证
+    支持@RequestBody和@RequestBody注解
+    -->
     <mvc:annotation-driven></mvc:annotation-driven>
 
-    <!--<bean class="org.springframework.web.servlet.view.BeanNameViewResolver">-->
-        <!--<property name="order" value="100"></property>-->
-    <!--</bean>-->
+    <!-- 配置自定义视图，eanNameViewResolver使用视图的名字解析视图-->
+    <!-- 视图解析器的解析顺序-->
+    <bean class="org.springframework.web.servlet.view.BeanNameViewResolver">
+        <!-- 通过order属性定义视图解析器优先级，order值越小优先级越高-->
+        <!-- InternalResourceViewResolver的优先级order值为MAX_INTEGER-->
+        <property name="order" value="100"></property>
+    </bean>
 
     <!--<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">-->
         <!--<property name="defaultEncoding" value="UTF-8"></property>-->
@@ -56,10 +72,11 @@
 
     <!-- 处理静态资源 -->
     <!-- DefaultServletHttpRequestHandler区分静态资源和非静态资源处理-->
-    <!--<mvc:default-servlet-handler/>-->
+    <!--配置一个DefaultServletHttpRequestHandler对象，对请求进行筛选，对没有经过映射的请求交由web应用服务器默认的servlet处理。-->
+    <!--同样需要配合<mvc:annotation-driven></mvc:annotation-driven>使用-->
+    <mvc:default-servlet-handler/>
 
-    <!---->
 
-
+    <!--<mvc:annotation-driven conversion-service="conversionService"></mvc:annotation-driven>-->
 
 </beans>

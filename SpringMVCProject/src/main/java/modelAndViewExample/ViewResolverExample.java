@@ -32,5 +32,16 @@ public class ViewResolverExample {
      * 为保证其他映射正常工作，实际开发中还需要配置<mvc:annotation-driven>标签
      * // <mvc:annotation-driven> TO-DO
      */
-    
+
+    @RequestMapping("/testCustomedView")
+    public String testCustomedView() {
+        System.out.println("testCustomedView");
+        return "customedView";
+    }
+
+    @RequestMapping("/testRedirect")
+    public String testRedirect() {
+        System.out.println("testRedirect");
+        return "redirect:/index.jsp";
+    }
 }

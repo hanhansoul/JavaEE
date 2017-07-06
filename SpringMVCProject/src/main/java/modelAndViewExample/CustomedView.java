@@ -1,4 +1,4 @@
-package modelTest;
+package modelAndViewExample;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.View;
@@ -9,15 +9,11 @@ import java.util.Date;
 import java.util.Map;
 
 /**
- * Created by Administrator on 2017/4/30.
- */
-
-/*
-  自定义视图View
-  org.springframework.web.servlet.view.BeanNameViewResolver
+ * Created by Administrator on 2017/7/6 0006.
+ * 同理可以实现Excel自定义视图
  */
 @Component
-public class HelloView implements View {
+public class CustomedView implements View {
     public String getContentType() {
         return "text/html";
     }
@@ -25,6 +21,6 @@ public class HelloView implements View {
     public void render(Map<String, ?> map,
                        HttpServletRequest httpServletRequest,
                        HttpServletResponse httpServletResponse) throws Exception {
-        httpServletResponse.getWriter().print("hello modelTest.view, time: " + new Date());
+        httpServletResponse.getWriter().print("hello view, time: " + new Date());
     }
 }

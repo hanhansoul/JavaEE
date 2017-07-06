@@ -23,6 +23,7 @@
         <!--<welcome-file>index</welcome-file>-->
     <!--</welcome-file-list>-->
 
+    <!-- 支持REST风格的filter-->
     <filter>
         <filter-name>HiddenHttpMethodFilter</filter-name>
         <filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
