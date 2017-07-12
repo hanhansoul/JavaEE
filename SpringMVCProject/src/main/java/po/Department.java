@@ -19,6 +19,10 @@ public class Department {
         this.departmentName = departmentName;
     }
 
+    public Department(Integer id) {
+        this.id = id;
+    }
+
     public String getDepartmentName() {
         return departmentName;
     }

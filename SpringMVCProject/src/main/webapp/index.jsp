@@ -56,10 +56,9 @@
     <br>
     age: <input type="text" name="age" />
     <br>
-    province: <input type="text" name="address.province" />
-    <br>
-    city: <input type="text" name="address.city"/>
+    departmentId: <input type="text" name="department.id" />
     <br/>
+    departmentName: <input type="text" name="department.departmentName" />
     <input type="submit" value="submit"/>
 </form>
 <br><br>
@@ -80,7 +79,7 @@
 <!--@ModelAttribute-->
 <form action="springmvc/testModelAttribute" method="post">
     <input type="hidden" name="id" value="1">
-    username: <input type="text" name="username" value="Tom"/>
+    username: <input type="text" name="name" value="Tom"/>
     <br>
     email: <input type="text" name="email" value="Tom@163.com"/>
     <br>
@@ -99,4 +98,7 @@
 
 <a href="/springmvc/testRedirect">Test Redirect</a>
 <br><br>
+
+<a href="emps">List All Users</a>
+<br/><br/>
 </html>

@@ -1,6 +1,6 @@
 package requestMappingExample;
 
-import entities.User;
+import po.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -173,5 +173,10 @@ public class RequestMappingExample {
         System.out.println(response);
         out.write("hello springmvc");
         //return SUCCESS;
+    }
+
+    @RequestMapping("/testList")
+    public String testList(){
+        return "redirect:/list.jsp";
     }
 }

@@ -24,11 +24,11 @@ public class UserDao {
     static {
         users = new HashMap<Integer, User>();
         id = 1005;
-        users.put(1001, new User(1001, "A", 10, 1, "aa@163.com", new Department(101, "D-AA")));
-        users.put(1002, new User(1002, "B", 11, 0, "bb@163.com", new Department(102, "D-BB")));
-        users.put(1003, new User(1003, "C", 12, 1, "cc@163.com", new Department(103, "D-CC")));
-        users.put(1004, new User(1004, "D", 13, 0, "dd@163.com", new Department(104, "D-DD")));
-        users.put(1005, new User(1005, "E", 14, 1, "ee@163.com", new Department(105, "D-EE")));
+        users.put(1001, new User(1001, "A", 10, 1, "aa@163.com", "123", new Department(101, "D-AA")));
+        users.put(1002, new User(1002, "B", 11, 0, "bb@163.com", "123", new Department(102, "D-BB")));
+        users.put(1003, new User(1003, "C", 12, 1, "cc@163.com", "123", new Department(103, "D-CC")));
+        users.put(1004, new User(1004, "D", 13, 0, "dd@163.com", "123", new Department(104, "D-DD")));
+        users.put(1005, new User(1005, "E", 14, 1, "ee@163.com", "123", new Department(105, "D-EE")));
     }
 
     public void save(User user) {

@@ -16,6 +16,7 @@
 
     <context:component-scan base-package="requestMappingExample"/>
     <context:component-scan base-package="modelAndViewExample"/>
+    <context:component-scan base-package="conversionService"/>
 
 
     <!--配置视图解析器 将handler方法返回值解析为实际的物理视图-->
@@ -44,9 +45,20 @@
     支持使用ConversionService实力对表单参数进行类型转换
     支持@NumberFormatannotation，@DateTimeFormat注解
     支持@Valid注解对JavaBean实例进行JSR303验证
-    支持@RequestBody和@RequestBody注解
+    支持@RequestBody和@RequestBody注解（@RequestBody和@RequestBody用于ajax）
     -->
     <mvc:annotation-driven></mvc:annotation-driven>
+
+    <bean id="conversionService"
+          class="org.springframework.context.support.ConversionServiceFactoryBean">
+        <property name="converters">
+            <set>
+                <ref bean="customedConverter" />
+            </set>
+        </property>
+    </bean>
+
+    <mvc:annotation-driven conversion-service="conversionService"></mvc:annotation-driven>
 
     <!-- 配置自定义视图，eanNameViewResolver使用视图的名字解析视图-->
     <!-- 视图解析器的解析顺序-->
