@@ -85,20 +85,4 @@ public class UserHandler {
         return "redirect:/emps";
     }
 
-
-    @ResponseBody
-    @RequestMapping("/testJson")
-    public Collection<User> testJson() {
-        return userDao.getAll();
-    }
-
-    //    @ResponseBody由函数返回的类型作为选择HttpMessageConverter类型的标准
-    //    @RequestBody由函数参数的类型作为选择HttpMessageConverter类型的标准
-    //    HttpEntity<T>和ResponseEntity<T>同理类似 ？？
-    @ResponseBody
-    @RequestMapping("/testHttpMessageConverter")
-    public String testHttpMessageConverter(@RequestBody String body) {
-        System.out.println(body);
-        return "" + new Date();
-    }
 }

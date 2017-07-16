@@ -60,13 +60,14 @@
 
     <mvc:annotation-driven conversion-service="conversionService"></mvc:annotation-driven>
 
-    <!-- 配置自定义视图，eanNameViewResolver使用视图的名字解析视图-->
+    <!-- 配置自定义视图，BeanNameViewResolver使用视图的名字解析视图-->
     <!-- 视图解析器的解析顺序-->
     <bean class="org.springframework.web.servlet.view.BeanNameViewResolver">
         <!-- 通过order属性定义视图解析器优先级，order值越小优先级越高-->
         <!-- InternalResourceViewResolver的优先级order值为MAX_INTEGER-->
         <property name="order" value="100"></property>
     </bean>
+
 
     <!--<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">-->
         <!--<property name="defaultEncoding" value="UTF-8"></property>-->

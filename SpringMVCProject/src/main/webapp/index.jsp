@@ -2,6 +2,23 @@
 <html>
 <head>
     <title></title>
+    <script type="text/javascript" src="scripts/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#testJson").click(function () {
+                var url = this.href;
+                var args = {};
+                $.post(url, args, function (data) {
+                    for (var i = 0; i < data.length; i++) {
+                        var id = data[i].id;
+                        var lastName = data[i].lastName;
+                        alert(id + " " + lastName);
+                    }
+                });
+                return false;
+            });
+        })
+    </script>
 </head>
 <body>
 <a href="/springmvc/testRequestMapping">test RequestMapping</a>
@@ -45,20 +62,20 @@
 <br><br>
 
 <a href="/springmvc/testCookieValue">test cookieValue</a>
-<br ><br>
+<br><br>
 
 <form action="/springmvc/testPOJO" method="post">
     username: <input type="text" name="username"/>
     <br>
-    password: <input type="password" name="password" />
+    password: <input type="password" name="password"/>
     <br>
-    email: <input type="text" name="email" />
+    email: <input type="text" name="email"/>
     <br>
-    age: <input type="text" name="age" />
+    age: <input type="text" name="age"/>
     <br>
-    departmentId: <input type="text" name="department.id" />
+    departmentId: <input type="text" name="department.id"/>
     <br/>
-    departmentName: <input type="text" name="department.departmentName" />
+    departmentName: <input type="text" name="department.departmentName"/>
     <input type="submit" value="submit"/>
 </form>
 <br><br>
@@ -101,4 +118,10 @@
 
 <a href="emps">List All Users</a>
 <br/><br/>
+
+<a href="/testJson">Test Json</a>
+<br><br>
+
+<a href="/testResponseEntity" >Test ResponseEntity</a>
+<br><br>
 </html>
