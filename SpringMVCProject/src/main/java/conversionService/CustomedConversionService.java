@@ -38,10 +38,11 @@ public class CustomedConversionService {
     }
 
     /**
-     * HttpMessageConverter<T>负责将请求信息转换为一个对象(类型为T)，或将对象(类型为T)输出位响应信息。
+     * HttpMessageConverter<T>负责将请求信息转换为一个对象(类型为T)，或将对象(类型为T)输出为响应信息。
      * HttpInputMessage ==> HttpMessageConverter == ... ==> HttpMessageConverter ==> HttpOutputMessage
      * Spring MVC 默认装配了六个HttpMessageConverter。
-     * <p>
+     *
+     *
      * 使用MessageConverter将请求信息转化并绑定到处理方法的入参中或将响应结果转为对应类型的响应信息。
      * 提供了两种方法
      * 1. @RequestBody/@ResponseBody对处理方法进行标注
@@ -60,6 +61,7 @@ public class CustomedConversionService {
     //    @ResponseBody由函数返回的类型作为选择HttpMessageConverter类型的标准
     //    @RequestBody由函数参数的类型作为选择HttpMessageConverter类型的标准
     //    HttpEntity<T>和ResponseEntity<T>同理类似 ？？
+
     @ResponseBody
     @RequestMapping("/testHttpMessageConverter")
     public String testHttpMessageConverter(@RequestBody String body) {
@@ -83,4 +85,5 @@ public class CustomedConversionService {
         ResponseEntity<byte[]> response = new ResponseEntity<byte[]>(body, header, statusCode);
         return response;
     }
+
 }

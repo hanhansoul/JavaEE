@@ -122,6 +122,16 @@
 <a href="/testJson">Test Json</a>
 <br><br>
 
-<a href="/testResponseEntity" >Test ResponseEntity</a>
+<a href="/testResponseEntity">Test ResponseEntity</a>
 <br><br>
+
+<form action="/testHttpMessageConverter" method="post" enctype="multipart/form-data">
+    File:<input type="file" name="file"/>
+    Desc:<input type="desc" name="desc"/>
+    <input type="submit" value="submit"/>
+</form>
+
+<a href="/helloworld">Test HelloWorld</a>
+<br><br>
+
 </html>

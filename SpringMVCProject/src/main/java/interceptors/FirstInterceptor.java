@@ -14,8 +14,11 @@ public class FirstInterceptor implements HandlerInterceptor {
 
     /**
      *
-     * 调用目标方法之前
+     * 该方法在调用目标方法之前调用
      * 权限、日志、事务
+     * 若返回值为true，则继续调用后续的拦截器和目标方法；
+     * 若返回值为false，则不会调用后续的拦截器和目标方法。
+     *
      */
     public boolean preHandle(HttpServletRequest httpServletRequest,
                              HttpServletResponse httpServletResponse, Object o) throws Exception {
