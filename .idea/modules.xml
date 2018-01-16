@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/HibernateProject/HibernateProject.iml" filepath="$PROJECT_DIR$/HibernateProject/HibernateProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JSPProject/JSPProject.iml" filepath="$PROJECT_DIR$/JSPProject/JSPProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/MyBatisProject/MyBatisProject.iml" filepath="$PROJECT_DIR$/MyBatisProject/MyBatisProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringMVCProject/SpringMVCProject.iml" filepath="$PROJECT_DIR$/SpringMVCProject/SpringMVCProject.iml" />
     </modules>

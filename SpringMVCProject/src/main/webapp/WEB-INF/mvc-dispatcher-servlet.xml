@@ -8,15 +8,15 @@
 
     <!--<context:component-scan base-package="helloworld"/>-->
     <!--<context:component-scan base-package="requestMappingTest"/>-->
-    <context:component-scan base-package="springIntegration"/>
-    <context:component-scan base-package="po"/>
-    <context:component-scan base-package="dao"/>
-    <context:component-scan base-package="restful"/>
-    <context:component-scan base-package="multipartRequestTest"/>
+    <context:component-scan base-package="old.springIntegration"/>
+    <context:component-scan base-package="old.po"/>
+    <context:component-scan base-package="old.dao"/>
+    <context:component-scan base-package="old.restful"/>
+    <context:component-scan base-package="old.multipartRequestTest"/>
 
-    <context:component-scan base-package="requestMappingExample"/>
-    <context:component-scan base-package="modelAndViewExample"/>
-    <context:component-scan base-package="conversionService"/>
+    <context:component-scan base-package="old.requestMappingExample"/>
+    <context:component-scan base-package="old.modelAndViewExample"/>
+    <context:component-scan base-package="old.conversionService"/>
 
 
     <!--配置视图解析器 将handler方法返回值解析为实际的物理视图-->
@@ -75,12 +75,12 @@
     <!--</bean>-->
 
     <mvc:interceptors>
-        <bean class="interceptors.FirstInterceptor"></bean>
+        <bean class="old.interceptors.FirstInterceptor"></bean>
         <!-- 配置拦截器作用的路径-->
         <mvc:interceptor>
             <!--<mvc:exclude-mapping path="/" />-->
             <mvc:mapping path="/emps"/>
-            <bean class="interceptors.SecondInterceptor"></bean>
+            <bean class="old.interceptors.SecondInterceptor"></bean>
         </mvc:interceptor>
     </mvc:interceptors>
 
@@ -90,7 +90,7 @@
     <!--同样需要配合<mvc:annotation-driven></mvc:annotation-driven>使用-->
     <mvc:default-servlet-handler/>
 
-    <!--<mvc:annotation-driven conversion-service="conversionService"></mvc:annotation-driven>-->
+    <!--<mvc:annotation-driven conversion-service="old.conversionService"></mvc:annotation-driven>-->
 
 
 </beans>

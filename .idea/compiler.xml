@@ -23,12 +23,12 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="HibernateProject" />
-        <module name="MyBatisProject" />
         <module name="SpringMVCProject" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="HibernateProject" target="1.5" />
+      <module name="JSPProject" target="1.5" />
       <module name="MyBatisProject" target="1.5" />
       <module name="SpringMVC" target="1.5" />
       <module name="SpringMVCProject" target="1.5" />

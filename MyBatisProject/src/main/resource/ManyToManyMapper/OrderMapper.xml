@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace指用户自定义的命名空间。 -->
+<mapper namespace="ManyToManyMapper.mapper.OrderMapper">
+	<select id="selectOrderByUserId" parameterType="int" resultMap="orderResultMap">
+		SELECT t1.*, t2.id order_id, t2.CODE, t2.total, t3.id article_id, t3.NAME, t3.price, t3.remark
+		FROM tb_user t1, tb_order t2, tb_article t3, tb_item t4 WHERE
+			t1.id = #{id} AND t2.user_id = t1.id AND t2.id = t4.order_id AND t3.id = t4.article_id
+	</select>
+
+    <resultMap id="orderResultMap" type="ManyToManyMapper.old.po.Order">
+        <id property="id" column="order_id"/>
+        <result property="code" column="code"/>
+        <result property="total" column="total"/>
+        
+        <association property="user" javaType="ManyToManyMapper.old.po.User">
+            <id property="id" column="id" />
+            <result property="username" column="username"/>
+            <result property="loginname" column="loginname"/>
+            <result property="password" column="password"/>
+            <result property="phone" column="phone"/>
+            <result property="address" column="address"/>
+        </association>
+
+        <collection property="articles" ofType="ManyToManyMapper.old.po.Article" >
+            <id property="id" column="article_id"/>
+            <result property="name" column="name"/>
+            <result property="price" column="price"/>
+            <result property="remark" column="remark"/>
+        </collection>
+    </resultMap>
+</mapper>

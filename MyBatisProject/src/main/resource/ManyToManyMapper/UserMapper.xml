@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace指用户自定义的命名空间。 -->
+<mapper namespace="ManyToManyMapper.mapper.UserMapper">
+	<resultMap id="userResultMap" type="ManyToManyMapper.old.po.User">
+		<id property="id" column="id"/>
+		<result property="username" column="username"/>
+		<result property="loginname" column="loginname"/>
+		<result property="password" column="password"/>
+		<result property="phone" column="phone"/>
+		<result property="address" column="address"/>
+		<collection property="orders" ofType="ManyToManyMapper.old.po.Order">
+			<id property="id" column="order_id"/>
+			<result property="code" column="code"/>
+			<result property="total" column="total"/>
+		</collection>
+	</resultMap>
+
+	<select id="selectUserById" parameterType="int" resultMap="userResultMap">
+		SELECT t1.*, t2.id order_id, t2.code, t2.total FROM tb_user t1, tb_order t2 WHERE t1.id = #{id} and t1.id = t2.user_id
+	</select>
+</mapper>

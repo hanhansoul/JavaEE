@@ -55,7 +55,7 @@
 
     ConversionService是Spring类型转换体系的核心接口
     可通过ConversionServiceFactoryBean的converters属性注册自定义的类型转换器。
-    使用 <mvc:annotation-driven conversion-service="conversionService"/>将自定义的ConversionService注册到spring mvc中
+    使用 <mvc:annotation-driven conversion-service="old.conversionService"/>将自定义的ConversionService注册到spring mvc中
     -->
 
     <br>
