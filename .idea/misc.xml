@@ -6,7 +6,9 @@
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/HibernateProject" />
     <file type="web" url="file://$PROJECT_DIR$/MyBatisProject" />
+    <file type="web" url="file://$PROJECT_DIR$/MyProject" />
     <file type="web" url="file://$PROJECT_DIR$/SpringMVCProject" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringProject" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
@@ -19,6 +21,7 @@
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/BootStrapProject/pom.xml" />
         <option value="$PROJECT_DIR$/JSPProject/pom.xml" />
       </set>
     </option>

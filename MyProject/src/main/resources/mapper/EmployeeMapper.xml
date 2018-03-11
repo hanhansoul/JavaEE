@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.EmployeeMapper">
+    <resultMap id="BaseResultMap" type="model.Employee">
+        <result column="ID" jdbcType="INTEGER" property="id"/>
+        <result column="DEPT_ID" jdbcType="INTEGER" property="deptId"/>
+        <result column="JOB_ID" jdbcType="INTEGER" property="jobId"/>
+        <result column="NAME" jdbcType="VARCHAR" property="name"/>
+        <result column="CARD_ID" jdbcType="VARCHAR" property="cardId"/>
+        <result column="ADDRESS" jdbcType="VARCHAR" property="address"/>
+        <result column="POST_CODE" jdbcType="VARCHAR" property="postCode"/>
+        <result column="TEL" jdbcType="VARCHAR" property="tel"/>
+        <result column="PHONE" jdbcType="VARCHAR" property="phone"/>
+        <result column="QQ_NUM" jdbcType="VARCHAR" property="qqNum"/>
+        <result column="EMAIL" jdbcType="VARCHAR" property="email"/>
+        <result column="SEX" jdbcType="INTEGER" property="sex"/>
+        <result column="PARTY" jdbcType="VARCHAR" property="party"/>
+        <result column="BIRTHDAY" jdbcType="TIMESTAMP" property="birthday"/>
+        <result column="RACE" jdbcType="VARCHAR" property="race"/>
+        <result column="EDUCATION" jdbcType="VARCHAR" property="education"/>
+        <result column="SPECIALITY" jdbcType="VARCHAR" property="speciality"/>
+        <result column="HOBBY" jdbcType="VARCHAR" property="hobby"/>
+        <result column="REMARK" jdbcType="VARCHAR" property="remark"/>
+        <result column="CREATE_DATE" jdbcType="TIMESTAMP" property="createDate"/>
+    </resultMap>
+
+    <select id="count" parameterType="model.Employee" resultType="int">
+        SELECT COUNT(*) FROM employee_inf WHERE 1 = 1
+        <if test="dept_id != null">
+            AND dept_id = #{deptId}
+        </if>
+        <if test="job_id != null">
+            AND job_id = #{jobId}
+        </if>
+        <if test="name != null">
+            AND name like concat('%', #{name}, '%')
+        </if>
+        <if test="card_id != null">
+            AND card_id = #{cardId}
+        </if>
+        <if test="dept_id != null">
+            AND dept_id = #{dept_id}
+        </if>
+    </select>
+
+</mapper>

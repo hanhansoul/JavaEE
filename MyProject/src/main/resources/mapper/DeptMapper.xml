@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.DeptMapper">
+    <resultMap id="BaseResultMap" type="model.Dept">
+        <result column="ID" jdbcType="INTEGER" property="id"/>
+        <result column="NAME" jdbcType="VARCHAR" property="name"/>
+        <result column="REMARK" jdbcType="VARCHAR" property="remark"/>
+    </resultMap>
+
+    <select id="selectByPage" parameterType="map" resultType="model.Dept">
+        SELECT * FROM dept_inf WHERE 1 = 1
+        <if test="name != null and name != ''">
+            AND name LIKE concat('%', #{name}, '%')
+        </if>
+        <if test="firstLimitParam != null and pageSize != null">
+            LIMIT #{firstLimitParam}, #{pageSize}
+        </if>
+    </select>
+
+    <select id="count" parameterType="map" resultType="int">
+        SELECT COUNT(*) FROM dept_inf WHERE 1 = 1
+        <if test="name != null and name != ''">
+            AND name LIKE concat('%', #{name}, '%')
+        </if>
+    </select>
+
+    <select id="selectAllDept" resultType="model.Dept">
+        SELECT * FROM dept_inf
+    </select>
+
+    <delete id="deleteById" parameterType="int">
+        DELETE FROM dept_inf WHERE id = #{id}
+    </delete>
+
+    <insert id="save" parameterType="model.Dept">
+        INSERT INTO user_inf(<include refid="key"/>) VALUES (<include refid="value"/>)
+    </insert>
+
+    <sql id="key">
+        <trim suffixOverrides=",">
+            <if test="name != null and name != ''">
+                name,
+            </if>
+            <if test="remark != null and remark != ''">
+                remark,
+            </if>
+        </trim>
+    </sql>
+
+    <sql id="value">
+        <trim suffixOverrides=",">
+            <if test="name != null and name != ''">
+                #{name},
+            </if>
+            <if test="remark != null and remark != ''">
+                #{remark},
+            </if>
+        </trim>
+    </sql>
+
+    <update id="update" parameterType="model.Dept">
+        UPDATE user_inf SET
+        <if test="name != null and name != ''">
+            name = #{name},
+        </if>
+        <if test="remark != null and remark != ''">
+            remark = #{remark},
+        </if>
+    </update>
+</mapper>

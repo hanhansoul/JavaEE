@@ -21,6 +21,7 @@
     </script>
 </head>
 <body>
+
 <a href="/springmvc/testRequestMapping">test RequestMapping</a>
 <br/><br/>
 

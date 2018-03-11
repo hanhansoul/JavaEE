@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.DocumentMapper">
+  <resultMap id="BaseResultMap" type="model.Document">
+    <result column="ID" jdbcType="INTEGER" property="id" />
+    <result column="TITLE" jdbcType="VARCHAR" property="title" />
+    <result column="filename" jdbcType="VARCHAR" property="filename" />
+    <result column="REMARK" jdbcType="VARCHAR" property="remark" />
+    <result column="CREATE_DATE" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="USER_ID" jdbcType="INTEGER" property="userId" />
+  </resultMap>
+</mapper>

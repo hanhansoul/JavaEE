@@ -5,7 +5,9 @@
       <module fileurl="file://$PROJECT_DIR$/HibernateProject/HibernateProject.iml" filepath="$PROJECT_DIR$/HibernateProject/HibernateProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/JSPProject/JSPProject.iml" filepath="$PROJECT_DIR$/JSPProject/JSPProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/MyBatisProject/MyBatisProject.iml" filepath="$PROJECT_DIR$/MyBatisProject/MyBatisProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MyProject/MyProject.iml" filepath="$PROJECT_DIR$/MyProject/MyProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringMVCProject/SpringMVCProject.iml" filepath="$PROJECT_DIR$/SpringMVCProject/SpringMVCProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringProject/SpringProject.iml" filepath="$PROJECT_DIR$/SpringProject/SpringProject.iml" />
     </modules>
   </component>
 </project>

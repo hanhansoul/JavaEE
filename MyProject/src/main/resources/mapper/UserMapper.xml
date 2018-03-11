@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.UserMapper">
+    <resultMap id="BaseResultMap" type="model.User">
+        <result column="ID" jdbcType="INTEGER" property="id"/>
+        <result column="loginname" jdbcType="VARCHAR" property="loginname"/>
+        <result column="PASSWORD" jdbcType="VARCHAR" property="password"/>
+        <result column="STATUS" jdbcType="INTEGER" property="status"/>
+        <result column="createdate" jdbcType="TIMESTAMP" property="createdate"/>
+        <result column="username" jdbcType="VARCHAR" property="username"/>
+    </resultMap>
+
+    <select id="selectByLoginnameAndPassword" resultMap="BaseResultMap">
+      SELECT * FROM user_inf WHERE loginname = #{loginname} and password = #{password}
+    </select>
+
+    <select id="selectById" parameterType="int" resultMap="BaseResultMap">
+        SELECT * FROM user_inf WHERE id = #{id}
+    </select>
+
+    <delete id="deleteById" parameterType="int" >
+        DELETE FROM user_inf WHERE id = #{id}
+    </delete>
+
+    <update id="update" parameterType="model.User">
+        UPDATE user_inf SET
+        <if test="loginname != null">
+            loginname = #{loginname}
+        </if>
+        <if test="password != null">
+            password = #{password}
+        </if>
+        <if test="status != null">
+            status = #{status}
+        </if>
+        <if test="createdate != null">
+            createdate = #{createdate}
+        </if>
+        <if test="username != null">
+            username = #{username}
+        </if>
+    </update>
+
+    <select id="selectByPage" parameterType="map" resultType="model.User" >
+        SELECT * FROM user_inf WHERE 1 = 1
+        <if test="username != null">
+            AND username LIKE concat('%', #{username}, '%')
+        </if>
+        <if test="status != null">
+            AND status= #{status}
+        </if>
+        <if test="firstLimitParam != null and pageSize != null">
+            LIMIT #{firstLimitParam}, #{pageSize}
+        </if>
+    </select>
+
+    <select id="count" parameterType="map" resultType="int">
+        SELECT count(*) FROM user_inf where 1 = 1
+        <if test="user != null and user != ''">
+            AND username LIKE concat('%', #{username}, '%')
+        </if>
+        <if test="status != null and status != ''">
+            AND status = #{status}
+        </if>
+    </select>
+
+    <insert id="save" parameterType="model.User" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO user_inf(<include refid="key"/>) VALUES (<include refid="value"/>)
+    </insert>
+
+    <sql id="key">
+        <trim suffixOverrides=",">
+            <if test="loginname != null and loginname != ''">
+                loginname,
+            </if>
+            <if test="password != null and password != ''">
+                password,
+            </if>
+            <if test="status != null">
+                status,
+            </if>
+            <if test="createdate != null">
+                createdate,
+            </if>
+            <if test="username != null and username != ''">
+                username,
+            </if>
+        </trim>
+    </sql>
+
+    <sql id="value">
+        <trim suffixOverrides=",">
+            <if test="loginname != null and loginname != ''">
+                #{loginname},
+            </if>
+            <if test="password != null and password != ''">
+                #{password},
+            </if>
+            <if test="status != null">
+                #{status},
+            </if>
+            <if test="createdate != null">
+                #{createdate},
+            </if>
+            <if test="username != null and username != ''">
+                #{username},
+            </if>
+        </trim>
+    </sql>
+</mapper>
