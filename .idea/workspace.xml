@@ -2,34 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3877de10-d2c3-42c2-b795-7f12887fb193" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BootStrapProject/BootStrapProject.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_4_3_14_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_4_3_14_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_4_3_14_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_4_3_14_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_4_3_14_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_4_3_14_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SpringProject/SpringProject.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MyProject/src/main/test/dao/UserMapperTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MyProject/src/main/resources/generator-template.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BootStrapProject/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SpringProject/pom.xml" />
-      <change type="DELETED" beforePath="D:\Workspace\JavaEE\MyProject\src\main\resources\example.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\Workspace\JavaEE\out\artifacts\JSPProject_war_exploded\META-INF\MANIFEST.MF" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MyBatisProject/MyBatisProject.iml" afterPath="$PROJECT_DIR$/MyBatisProject/MyBatisProject.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MyProject/MyProject.iml" afterPath="$PROJECT_DIR$/MyProject/MyProject.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/MyProject_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/MyProject_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MyBatisProject/src/main/resources/ManyToManyMapper/UserMapper.xml" afterPath="$PROJECT_DIR$/MyBatisProject/src/main/resources/ManyToManyMapper/UserMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MyProject/src/main/resources/generatorConfig.xml" afterPath="$PROJECT_DIR$/MyProject/src/main/resources/generatorConfig.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SpringMVCProject/src/main/webapp/index.jsp" afterPath="$PROJECT_DIR$/SpringMVCProject/src/main/webapp/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MyProject/src/main/resources/mybatis-config.xml" afterPath="$PROJECT_DIR$/MyProject/src/main/resources/mybatis-config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HibernateProject/pom.xml" afterPath="$PROJECT_DIR$/HibernateProject/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MyBatisProject/pom.xml" afterPath="$PROJECT_DIR$/MyBatisProject/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MyProject/pom.xml" afterPath="$PROJECT_DIR$/MyProject/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SpringMVCProject/pom.xml" afterPath="$PROJECT_DIR$/SpringMVCProject/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="JavaEE.iws" />
@@ -85,8 +57,8 @@
       <file leaf-file-name="index.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SpringMVCProject/src/main/webapp/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5293441">
-              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+            <state vertical-scroll-proportion="-0.9562716">
+              <caret line="53" column="8" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -406,9 +378,9 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -1368,11 +1340,12 @@
       <workItem from="1520168074830" duration="1801000" />
       <workItem from="1520650472137" duration="2926000" />
       <workItem from="1520690191582" duration="1277000" />
+      <workItem from="1521035553549" duration="1212000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="230264000" />
+    <option name="totallyTimeSpent" value="231476000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1723,7 +1696,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1746,7 +1718,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="59" selection-start-line="19" selection-start-column="59" selection-end-line="19" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1754,7 +1725,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="153" column="43" selection-start-line="153" selection-start-column="43" selection-end-line="153" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1762,7 +1732,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1777,7 +1746,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="125" column="8" selection-start-line="125" selection-start-column="8" selection-end-line="125" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1913,8 +1881,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SpringMVCProject/src/main/webapp/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5293441">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        <state vertical-scroll-proportion="-0.9562716">
+          <caret line="53" column="8" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="8" />
           <folding />
         </state>
       </provider>
