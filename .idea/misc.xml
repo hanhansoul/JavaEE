@@ -23,6 +23,7 @@
       <set>
         <option value="$PROJECT_DIR$/BootStrapProject/pom.xml" />
         <option value="$PROJECT_DIR$/JSPProject/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringSecurityProject/pom.xml" />
       </set>
     </option>
   </component>

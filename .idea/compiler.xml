@@ -34,6 +34,7 @@
       <module name="SpringMVC" target="1.5" />
       <module name="SpringMVCProject" target="1.5" />
       <module name="SpringProject" target="1.5" />
+      <module name="SpringSecurityProject" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
